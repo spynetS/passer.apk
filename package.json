@@ -19,6 +19,7 @@
     "react-native": "0.70.5",
     "react-native-argon2": "^2.0.1",
     "react-native-bouncy-checkbox": "^3.0.6",
+    "react-native-numeric-input": "^1.9.1",
     "react-native-tailwindcss": "^1.1.11",
     "react-native-web": "~0.18.9"
   },

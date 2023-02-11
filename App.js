@@ -10,11 +10,13 @@ import * as Crypto from 'expo-crypto';
 import CheckBox from './CheckBox';
 
 import * as Clipboard from 'expo-clipboard';
+import NumericInput from 'react-native-numeric-input'
 
 export default function App() {
   
   const [passphrase, setPassphrase] = useState("");
   const [pas, setPass] = useState("");
+  const [len, setLen] = useState(25);
 
   const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
@@ -23,12 +25,14 @@ export default function App() {
         Crypto.CryptoDigestAlgorithm.SHA256,
         password
       );
-      setPass(digest)
+      setPass((digest.toString().slice(0,len)))
   }
 
   return (
     <View style={[styles.container, t.bgGray900,]}>
     <TextInputField placeholder="Passphrase" onChangeText={password} password={true}  ></TextInputField>
+      
+      <NumericInput textColor={"white"} initValue={len} onChange={setLen} />
 
       <TouchableOpacity onPress={()=>Clipboard.setString(pas)} style={styles.button} >
         <Text style={[t.text2xl]} >Copy to clipboard</Text>
