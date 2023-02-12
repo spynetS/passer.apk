@@ -25,7 +25,7 @@ export default function CheckBox(props) {
     }
 
     return(
-        <TouchableOpacity onPress={()=>{setOn(!on);props.value(!on)}} style={[t.flexRow, t.itemsCenter,t.mT4]} >
+        <TouchableOpacity onPress={()=>{setOn(!on);props.value(!on)}} style={[t.flexRow, t.itemsCenter,t.mY4]} >
             <View 
             style={
                 [t.w5, 
